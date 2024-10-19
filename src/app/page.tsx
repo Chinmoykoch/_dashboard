@@ -1,19 +1,15 @@
-import Link from "next/link"
+import Link from "next/link";
 import {
   Bell,
   CircleUser,
   Home,
   LineChart,
   Menu,
-  Package,
   Package2,
-  Search,
   ShoppingCart,
-  Users,
-} from "lucide-react"
-
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+} from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,13 +17,13 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { ModeToggle } from "@/components/ui/mode-toggle"
-import Crimes from "@/components/crimes/crimes"
-import Chart from "@/components/chart/chart"
+} from "@/components/ui/dropdown-menu";
 
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+import Crimes from "@/components/crimes/crimes";
+import Chart from "@/components/chart/chart";
+import Admin_search from "@/components/crimes/admin_search";
 
 export default function Dashboard() {
   return (
@@ -79,7 +75,6 @@ export default function Dashboard() {
               </Link>
             </nav>
           </div>
-         
         </div>
       </div>
       <div className="flex flex-col">
@@ -136,20 +131,10 @@ export default function Dashboard() {
                   Analytics
                 </Link>
               </nav>
-             
             </SheetContent>
           </Sheet>
           <div className="w-full flex-1">
-            <form>
-              <div className="relative">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="Search products..."
-                  className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
-                />
-              </div>
-            </form>
+            <Admin_search />
           </div>
           <ModeToggle />
           <DropdownMenu>
@@ -171,9 +156,9 @@ export default function Dashboard() {
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <Chart />
-         <Crimes />
+          <Crimes />
         </main>
       </div>
     </div>
-  )
+  );
 }
